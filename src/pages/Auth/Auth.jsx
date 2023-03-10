@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "./Auth.css";
 import Logo from "../../img/logo.png";
 import { useDispatch } from "react-redux";
+import { logIn, signUp } from "../../Actions/authAction";
+
 
 function Auth() {
   const initialData = {
@@ -23,7 +25,7 @@ function Auth() {
     e.preventDefault();
     if (isSignup) {
       data.password === data.confirmpass
-        ? dispatch(signup(data))
+        ? dispatch(signUp (data))
         : setConfirmPass(false);
     }else{
       dispatch(logIn(data))
