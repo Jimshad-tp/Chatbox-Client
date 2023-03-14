@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Auth.css";
 import Logo from "../../img/logo.png";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { logIn, signUp } from "../../Actions/authAction";
 
 
@@ -16,6 +16,7 @@ function Auth() {
   const [isSignup, setIsSignup] = useState(false);
   const [data, setData] = useState(initialData);
   const dispatch = useDispatch();
+  const loading = useSelector((state)=>state.authReducer.loading)
   const [confirmPass, setConfirmPass] = useState(true);
   const handleChange = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
@@ -139,7 +140,7 @@ function Auth() {
             </span>
           </div>
 
-          <button className="button infoButton" type="submit">
+          <button className="button infoButton" type="submit" disabled={loading}>
             {isSignup ? "Login" : "Signup"}
           </button>
         </form>
