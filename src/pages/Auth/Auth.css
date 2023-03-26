@@ -97,3 +97,8 @@
     background: silver;
     pointer-events: none;
   }
+  .authForm {
+    list-style: ro;
+  }
+
+  

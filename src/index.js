@@ -6,7 +6,7 @@ import store from "./store/reduxStore";
 import {BrowserRouter,Routes,Route} from "react-router-dom"
 
 ReactDOM.render(
-  <Provider store={store}>
+<Provider store={store}>
     <BrowserRouter>
     <Routes>
       <Route path="*" element={<App/>} />
